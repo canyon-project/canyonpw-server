@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <a href="/index2.html">点我</a>
+</div>
+</body>
+<script>
+    document.addEventListener('visibilitychange',()=>{
+        fetch(`http://localhost:3000/cov`,{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json' // 指定请求头中的内容类型为 JSON
+            },
+            body:JSON.stringify({
+                name:'zt'
+            })
+        })
+    })
+    window.reportCov = function () {
+        return fetch(`http://localhost:3000/cov`,{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json' // 指定请求头中的内容类型为 JSON
+            },
+            body:JSON.stringify({
+                name:'zt'
+            })
+        }).then(res=>res.json())
+    }
+</script>
+</html>

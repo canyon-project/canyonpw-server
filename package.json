@@ -1,0 +1,26 @@
+{
+  "name": "canyonpw-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "bin": {
+    "canyonpw-server": "main.js"
+  },
+  "scripts": {
+    "test": "echo hi",
+    "build-linux": "pkg . --targets linuxstatic --output codecov-linux",
+    "build-aarch64": "pkg . --targets linuxstatic-arm64 --output codecov-aarch64",
+    "build-macos": "pkg . --targets macos --output codecov-macos"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "istanbul-lib-coverage": "^3.2.2"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}
